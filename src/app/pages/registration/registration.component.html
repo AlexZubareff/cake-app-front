@@ -1,0 +1,29 @@
+<div class="registration" >
+    <div class="registration-form" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="registration-field-list">
+            <div >
+                <span class="field-title">Логин</span>
+                <input class="input-field" type="text" formControlName="login" />
+         </div>
+         <div >
+            <span class="field-title">Email</span>
+            <input class="input-field" type="text" formControlName="email"/>
+     </div>
+         <div >
+                <span class="field-title">Пароль</span>
+                <input class="input-field" type="password" formControlName="password"/>
+         </div>
+         <div >
+                <span class="field-title">Повторите пароль</span>
+                <input class="input-field" type="password"  formControlName="repeatPassword"/>
+         </div>
+
+        </div>
+        <div >
+            <button  type="button" class="registration-button" (click)="onSubmit()" [disabled]="!regForm.valid">Зарегистрироваться</button>
+     </div>
+    </div>
+
+
+    
+</div>

@@ -1,0 +1,36 @@
+.actions-card {
+
+    width: 270px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+    background-color: rgba(247, 236, 34, 0.45);
+    border: 1px solid rgb(83, 81, 81);
+    overflow: hidden;
+}
+
+img {
+    width: 270px;
+    height: 270px;
+}
+
+.actions-card-content {
+
+    width: 270px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    padding: auto;
+    background: rgb(140, 196, 236);
+}
+
+.content {
+    margin: auto;
+}

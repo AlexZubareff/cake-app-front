@@ -1,0 +1,50 @@
+<div class="header-cart">
+    <div class="header-cart-item">
+        <div class="header-cart-item-nav">Доставка и оплата</div>
+        <div class="header-cart-item-nav">Оптовые поставки</div>
+        <div class="header-cart-item-nav">Контакты</div>
+    </div>
+    <div class="header-cart-item">
+        <img src="../../../assets/img/ico/phone.png" alt="bag">
+        <div>8 800 123 45 67</div>
+    </div>
+    <div class="header-cart-item">
+        <img src="../../../assets/img/ico/bag.png" alt="bag">
+        <div>В корзине 4 товара</div>
+    </div>
+</div>
+<div class="header-nav d-flex flex-row">
+    <div class="nav-left">
+        <div class="menu-item"><a routerLink="/" routerLinkActive="active"
+            ariaCurrentWhenActive="page"><img src="../assets/img/logo/logo.png" alt="logo"></a></div>
+        <!-- <div class="menu-item">Торты</div>
+            <div class="menu-item">Пирожные</div>
+            <div class="menu-item">Конфеты</div>
+            <div class="menu-item">Наборы</div> -->
+    </div>
+    <div class="nav-center">
+        <div class="menu-item"><a routerLink="/actions" routerLinkActive="active" ariaCurrentWhenActive="page">Акции</a>
+        </div>
+        <div class="menu-item"><a routerLink="/popular" routerLinkActive="active"
+                ariaCurrentWhenActive="page">Пирожные</a></div>
+        <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Конфеты</a>
+        </div>
+        <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Наборы</a>
+        </div>
+    </div>
+    <div *ngIf="user" class="nav-right">
+
+        <div class="menu-item"><a routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">{{
+                user.login }}</a></div>
+        <div class="menu-item"><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Выход</a>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Вход</a>
+        </div>
+        <div class="menu-item"><a routerLink="/registration" routerLinkActive="active"
+                ariaCurrentWhenActive="page">Регистрация</a></div>
+    </div>
+
+</div>  

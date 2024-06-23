@@ -1,0 +1,29 @@
+<div class="auth" >
+    <div class="auth-form" [formGroup]="authForm" (ngSubmit)="onSubmit()" >
+        <div class="auth-field-list">
+            <div >
+                <span class="field-title">Логин</span>
+                <input class="input-field" type="text" formControlName="login" />
+         </div>
+         <!-- <div >
+            <span class="field-title">Email</span>
+            <input class="input-field" type="text" />
+     </div> -->
+         <div >
+                <span class="field-title">Пароль</span>
+                <input class="input-field" type="password" formControlName="password"/>
+         </div>
+         <!-- <div >
+                <span class="field-title">Повторите пароль</span>
+                <input class="input-field" type="password"  />
+         </div> -->
+
+        </div>
+        <div >
+            <button  type="button" class="auth-button" (click)="onSubmit()" [disabled]="!authForm.valid">Вход</button>
+     </div>
+    </div>
+
+
+    
+</div>

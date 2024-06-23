@@ -1,0 +1,64 @@
+.product-card {
+    width: 370px;
+    height: 459px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid rgb(237, 237, 240);
+    border-radius: 5px;
+
+    background: rgb(255, 255, 255);
+}
+
+.img-product-card {
+    width: 370px;
+    height: 300px;
+}
+
+.product-card-content-title {
+    padding: 10px 30px;
+}
+
+.product-card-content-text {
+    padding: 10px 30px;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.product-card-content-price {
+    width: 220px;
+    height: 49px;
+    padding: 10px 20px;
+
+    /* Montserrat semi 18 */
+    color: rgb(231, 66, 106);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+    box-sizing: border-box;
+    border: 1px solid rgb(237, 237, 240);
+}
+
+.product-card-content-cart-button {
+    width: 150px;
+    height: 49px;
+    background: rgb(255, 255, 255);
+    /* padding: 10px 20px; */
+    box-sizing: border-box;
+    border: none;
+    border-top: 1px solid rgb(237, 237, 240);
+}

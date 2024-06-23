@@ -1,0 +1,104 @@
+.header-content {
+    width: 1440px;
+    height: 475px;
+    background-color: rgba(255, 252, 189, 0.45);
+    border: 1px solid rgb(83, 81, 81);
+
+}
+
+.products {
+    width: 1440px;
+    min-height: 750px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(243, 170, 233, 0.45);
+    border: 1px solid rgb(83, 81, 81);
+    padding: 0 134px;
+}
+
+.product-item {
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width: 570px;
+    height: 260px;
+    margin: 10px 0;
+    background-color: rgba(196, 188, 42, 0.45);
+    border: 1px solid rgb(83, 81, 81);
+}
+
+.product-item-ico {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 252, 189, 0.45);
+    border-radius: 50%;
+    /* border: 1px solid rgb(83, 81, 81); */
+}
+
+.actions {
+    width: 1440px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items:center; */
+    background-color: rgba(166, 233, 128, 0.45);
+    padding: 0 134px;
+}
+.actions-title {
+/* Акции */
+/* position: absolute; */
+width: 105px;
+height: 37px;
+
+/* left: 668px;
+right: 667px;
+top: 1704px;
+bottom: 3590px; */
+}
+
+.actions-card-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(166, 233, 128, 0.45);
+    padding: 30px 0;
+}
+
+
+.popular {
+    width: 1440px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    /* align-items:center; */
+    background-color: rgba(166, 233, 128, 0.45);
+    padding: 0 134px;
+}
+
+.popular-title {
+    /* Акции */
+    /* position: absolute; */
+    width: 105px;
+    height: 37px;
+    
+    /* left: 668px;
+    right: 667px;
+    top: 1704px;
+    bottom: 3590px; */
+    }
+    
+    .popular-card-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: rgba(166, 233, 128, 0.45);
+        padding: 30px 0;
+    }
