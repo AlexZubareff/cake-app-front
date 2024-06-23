@@ -32,19 +32,21 @@
         <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Наборы</a>
         </div>
     </div>
-    <div *ngIf="user" class="nav-right">
 
-        <div class="menu-item"><a routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">{{
-                user.login }}</a></div>
-        <div class="menu-item"><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Выход</a>
+    @if (user) {
+        <div class="nav-right">
+            <div class="menu-item"><a routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">{{
+                    user.login }}</a></div>
+            <div class="menu-item"><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="userExit()">Выход</a>
+            </div>
         </div>
-    </div>
-
-    <div class="nav-right">
-        <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Вход</a>
+    } @else {
+        <div class="nav-right">
+            <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Вход</a>
+            </div>
+            <div class="menu-item"><a routerLink="/registration" routerLinkActive="active"
+                    ariaCurrentWhenActive="page">Регистрация</a></div>
         </div>
-        <div class="menu-item"><a routerLink="/registration" routerLinkActive="active"
-                ariaCurrentWhenActive="page">Регистрация</a></div>
-    </div>
+    }
 
 </div>  

@@ -4,6 +4,7 @@ import { RestUserService } from '../../services/rest/user/rest-user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
+import { IUser } from '../../models/users';
 
 @Component({
   selector: 'app-auth',
@@ -14,6 +15,7 @@ import { UserService } from '../../services/user/user.service';
 })
 export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
   authForm: FormGroup;
+  authUser: IUser | undefined;
 
   constructor(
     private restUserService: RestUserService, 
@@ -42,14 +44,23 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log('auth user data: ', userData)
 
     this.restUserService.authUser(userData, userData.login).subscribe((data) => {
-      console.log('auth User Data: ', data);
-      // authUser.id = data.id;
+      console.log('auth User Data: ', data.id);
+      
+      // console.log('ID AUTH USER: ',this.authUser.id)
+      this.userService.getUserById(data.id).subscribe((data) => {
+
+      console.log('All Data auth User: ', data);
+
       this.userService.setUser(data);
       const token: string = data.access_token;
       this.userService.setToken(token);
 
       this.router.navigate(['']);
       // console.log('auth true');
+
+      });
+      
+
     }
     ,(err: HttpErrorResponse) => {
       const serverError = err.error;

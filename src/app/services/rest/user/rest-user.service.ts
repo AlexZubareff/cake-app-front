@@ -22,4 +22,10 @@ export class RestUserService {
 
 }
 
+getUserById(id: string | undefined): Observable<IUser> {
+
+  return this.http.get<IUser>('http://localhost:3000/users/' + id);
+
+}
+
 }
