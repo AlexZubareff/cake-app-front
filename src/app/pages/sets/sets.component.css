@@ -1,0 +1,48 @@
+.set {
+    width: 1440px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    align-items: center;
+    background-color: rgba(229, 229, 229);
+    padding: 30px 134px;
+}
+
+.set-title {
+     width: 305px;
+    height: 37px;
+    color: rgb(41, 41, 41);
+font-family: Montserrat;
+font-size: 30px;
+font-weight: 600;
+line-height: 37px;
+letter-spacing: 0%;
+text-align: center;
+
+}
+
+.set-card-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* background: rgb(255, 255, 255); */
+
+    /* padding: 10px 0; */
+}
+
+.button-set {
+    width: 293px;
+    height: 52px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border: 1px solid rgb(78, 157, 211);
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+.button-set:hover {
+    background: rgb(240, 239, 239);
+}

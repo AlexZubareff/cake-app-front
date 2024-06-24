@@ -1,4 +1,4 @@
-.product-card {
+.set-card {
     width: 370px;
     height: 459px;
     display: flex;
@@ -15,16 +15,16 @@
     background: rgb(255, 255, 255);
 }
 
-.img-product-card {
+.img-set-card {
     width: 370px;
     height: 300px;
 }
 
-.product-card-content-title {
+.set-card-content-title {
     padding: 10px 30px;
 }
 
-.product-card-content-text {
+.set-card-content-text {
     padding: 10px 30px;
 }
 
@@ -36,7 +36,7 @@
 
 }
 
-.product-card-content-price {
+.set-card-content-price {
     width: 220px;
     height: 49px;
     padding: 10px 20px;
@@ -53,7 +53,7 @@
     border: 1px solid rgb(237, 237, 240);
 }
 
-.product-card-content-cart-button {
+.set-card-content-cart-button {
     width: 150px;
     height: 49px;
     background: rgb(255, 255, 255);

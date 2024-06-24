@@ -2,16 +2,19 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ActionsComponent } from './pages/actions/actions.component';
 import { MainComponent } from './pages/main/main.component';
-import { PopularComponent } from './pages/popular/popular.component';
+import { SetsComponent } from './pages/sets/sets.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { ProductComponent } from './pages/product/product.component';
 
 export const routes: Routes = [
     {path: '', component: MainComponent, pathMatch: 'full'},
     {path: 'actions', component: ActionsComponent},
-    {path: 'popular', component: PopularComponent},
+    {path: 'sets', component: SetsComponent},
     {path: 'auth', component: AuthComponent},
     {path: 'registration', component: RegistrationComponent},
+    {path: 'product', component: ProductComponent},
+
 
 
     {path: '**', redirectTo: ''}
