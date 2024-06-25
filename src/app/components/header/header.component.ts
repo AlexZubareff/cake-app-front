@@ -1,14 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { IUser } from '../../models/users';
 import { UserService } from '../../services/user/user.service';
 import { Subscription } from 'rxjs';
+import { AuthComponent } from '../../pages/auth/auth.component';
+import { RegistrationComponent } from '../../pages/registration/registration.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
+    AuthComponent,
+    RegistrationComponent,
     CommonModule,
     RouterLink,
     RouterLinkActive
@@ -17,13 +21,14 @@ import { Subscription } from 'rxjs';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent  implements OnInit, OnDestroy, OnChanges{
-
+  
   public user: IUser | null;
 
   userUnsubscribe: Subscription;
 
   constructor(
     private userService: UserService,
+    private elementRef: ElementRef<HTMLElement>
   ) { }
   
  ngOnInit(): void {
@@ -49,6 +54,22 @@ userExit() {
     'user-private-token'
     );
     this.user = null;
+}
+
+showAuthModal(){
+  const element = document.getElementById('authModal');
+  // console.log(element);
+  element?.setAttribute("aria-modal","true");
+  element?.setAttribute("open","open");
+  
+}
+
+showRegModal(){
+  const element = document.getElementById('registrationModal');
+  // console.log(element);
+  element?.setAttribute("aria-modal","true");
+  element?.setAttribute("open","open");
+  
 }
 
 }

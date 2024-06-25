@@ -39,27 +39,21 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
     
   }
 
-  onSubmit(){
+  AuthOnSubmit(){
     const userData = this.authForm.getRawValue();
     console.log('auth user data: ', userData)
 
     this.restUserService.authUser(userData, userData.login).subscribe((data) => {
-      console.log('auth User Data: ', data.id);
-      
-      // console.log('ID AUTH USER: ',this.authUser.id)
-      this.userService.getUserById(data.id).subscribe((data) => {
 
-      console.log('All Data auth User: ', data);
+      console.log('auth User Data from server: ', data);
+      
+
 
       this.userService.setUser(data);
       const token: string = data.access_token;
       this.userService.setToken(token);
 
       this.router.navigate(['']);
-      // console.log('auth true');
-
-      });
-      
 
     }
     ,(err: HttpErrorResponse) => {
@@ -68,5 +62,9 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
       // this.messageService.add({severity:'warn', summary:'Service Message', detail:serverError.errorText});
       console.log('auth false');
     })
+  }
+
+  goToRegSubmit(){
+    console.log("goToRegSubmit");
   }
 }

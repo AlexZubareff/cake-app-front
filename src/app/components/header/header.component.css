@@ -1,6 +1,7 @@
 a {
     text-decoration: none;
     color: rgb(41, 41, 41);
+    cursor: pointer;
 }
 img {
     margin-right: 10px;
@@ -12,8 +13,7 @@ img {
     justify-content: space-between;
 
     align-items: center;
-    /* position: absolute; */
-    width: 1440px;
+     width: 1440px;
     height: 48px;
     background: rgb(247, 235, 229);
     padding: 0 134px;
@@ -79,3 +79,43 @@ img {
 .menu-item {
     margin: 20px;
 }
+
+.auth-dialog {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: rgba(77, 71, 71, 0.39);
+    position: fixed;
+}
+
+.auth-dialog::backdrop {
+    /* background-color: #2e3252b3; */
+    
+
+    /* animation: fade-in 0.3s;
+    animation-fill-mode: forwards; */
+    opacity: 0.1;
+    
+  }
+
+  .registration-dialog {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: rgba(77, 71, 71, 0.39);
+    position: fixed;
+}
+
+.registration-dialog::backdrop {
+    /* background-color: #2e3252b3; */
+    
+
+    /* animation: fade-in 0.3s;
+    animation-fill-mode: forwards; */
+    opacity: 0.1;
+    
+  }

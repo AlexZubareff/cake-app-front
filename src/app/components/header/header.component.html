@@ -1,3 +1,9 @@
+<dialog class="auth-dialog" id="authModal">
+    <app-auth></app-auth>
+</dialog>
+<dialog class="registration-dialog" id="registrationModal">
+    <app-registration></app-registration>
+</dialog>
 <div class="header-cart">
     <div class="header-cart-item">
         <div class="header-cart-item-nav">Доставка и оплата</div>
@@ -42,10 +48,10 @@
         </div>
     } @else {
         <div class="nav-right">
-            <div class="menu-item"><a routerLink="/auth" routerLinkActive="active" ariaCurrentWhenActive="page">Вход</a>
+            <!-- <div class="menu-item" (click)="showAuthModal()">Модалка</div> -->
+            <div class="menu-item" (click)="showAuthModal()"><a>Вход</a>
             </div>
-            <div class="menu-item"><a routerLink="/registration" routerLinkActive="active"
-                    ariaCurrentWhenActive="page">Регистрация</a></div>
+            <div class="menu-item" (click)="showRegModal()"><a>Регистрация</a></div>
         </div>
     }
 

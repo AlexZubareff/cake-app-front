@@ -1,5 +1,5 @@
 <div class="auth" >
-    <div class="auth-form" [formGroup]="authForm" (ngSubmit)="onSubmit()" >
+    <div class="auth-form" [formGroup]="authForm"  >
         <div class="auth-field-list">
             <div >
                 <span class="field-title">Логин</span>
@@ -20,8 +20,11 @@
 
         </div>
         <div >
-            <button  type="button" class="auth-button" (click)="onSubmit()" [disabled]="!authForm.valid">Вход</button>
+            <button  type="button" class="auth-button" (click)="AuthOnSubmit()" [disabled]="!authForm.valid">Вход</button>
      </div>
+     <div >
+        <button  type="button" class="reg-button" (click)="goToRegSubmit()">Зарегистрироваться</button>
+ </div>
     </div>
 
 

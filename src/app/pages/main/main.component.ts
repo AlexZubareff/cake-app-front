@@ -6,6 +6,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { ActionCardComponent } from '../../components/action-card/action-card.component';
 import { SetCardComponent } from '../../components/set-card/set-card.component';
 import { ProductComponent } from '../product/product.component';
+import { AuthComponent } from '../auth/auth.component';
 
 @Component({
   selector: 'app-main',
@@ -17,6 +18,7 @@ import { ProductComponent } from '../product/product.component';
     ActionCardComponent,
     SetCardComponent,
     ProductComponent,
+    AuthComponent,
     RouterLink,
     RouterLinkActive
   ],
