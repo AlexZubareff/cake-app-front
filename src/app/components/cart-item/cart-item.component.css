@@ -1,0 +1,129 @@
+.cart-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid rgb(237, 237, 240);
+
+}
+
+.cart-item-close-buttom {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.img-cart {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 201px;
+    height: 100%;
+}
+
+.cart-item-info-title{
+/* Набор макарон 12 шт. */
+/* position: absolute; */
+width: 201px;
+height: 17px;
+
+color: rgb(41, 41, 41);
+font-family: Montserrat;
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0%;
+text-align: left;
+
+}
+
+.cart-item-info-text {
+/* Трюфель 2 шт. Розмарин 3 шт. Ананас 1 шт. Кокос 4 шт. */
+/* position: absolute; */
+width: 201px;
+height: 66px;
+
+color: rgb(41, 41, 41);
+font-family: Proxima Nova;
+font-size: 12px;
+font-weight: 400;
+line-height: 15px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+
+.cart-item-count-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    width: 80px;
+    height:20px;
+}
+
+.cart-item-minus-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height:20px;
+
+    box-sizing: border-box;
+border: 1px solid rgba(41, 41, 41, 0.1);
+border-radius: 3px;
+
+background: rgb(255, 255, 255);
+text-align: center;
+margin: auto;
+}
+
+.cart-item-plus-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height:20px;
+
+    box-sizing: border-box;
+border: 1px solid rgba(41, 41, 41, 0.1);
+border-radius: 3px;
+
+background: rgb(255, 255, 255);
+}
+
+button:hover {
+    border: 1px solid rgba(231, 66, 106, 0.5);
+}
+
+.cart-item-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height:20px;
+}
+
+.cart-item-price {
+
+width: 107px;
+height: 17px;
+
+
+font-family: Montserrat;
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0%;
+text-align: left;
+}

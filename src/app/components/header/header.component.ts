@@ -6,6 +6,7 @@ import { UserService } from '../../services/user/user.service';
 import { Subscription } from 'rxjs';
 import { AuthComponent } from '../../pages/auth/auth.component';
 import { RegistrationComponent } from '../../pages/registration/registration.component';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -23,11 +24,16 @@ import { RegistrationComponent } from '../../pages/registration/registration.com
 export class HeaderComponent  implements OnInit, OnDestroy, OnChanges{
   
   public user: IUser | null;
+  public totalCount: any;
+  public totalCountText: any;
 
   userUnsubscribe: Subscription;
+  cartTotalCountUnsubscribe: Subscription;
+  cartTotalCountTextUnsubscribe: Subscription;
 
   constructor(
     private userService: UserService,
+    private cartService: CartService,
     private elementRef: ElementRef<HTMLElement>
   ) { }
   
@@ -36,6 +42,19 @@ export class HeaderComponent  implements OnInit, OnDestroy, OnChanges{
   console.log('subscribe data getUser: ', data);
   this.user = data;
  })
+
+ this.cartTotalCountUnsubscribe  = this.cartService.newCartTotalCount$.subscribe(
+  (data) => {
+    console.log('newCartTotalCount: ', data);
+    this.totalCount = data;
+  }
+);
+this.cartTotalCountTextUnsubscribe  = this.cartService.newCartTotalCountText$.subscribe(
+  (data) => {
+    console.log('newCartTotalCountText: ', data);
+    this.totalCountText = data;
+  }
+);
 
  }
 

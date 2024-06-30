@@ -36,7 +36,7 @@
 <section class="actions">
     <div class="actions-title">Акции</div>
     <div class="actions-card-list">
-        <app-action-card></app-action-card>
+        <app-action-card ></app-action-card>
         <app-action-card></app-action-card>
         <app-action-card></app-action-card>
         <app-action-card></app-action-card>
@@ -45,13 +45,10 @@
 </section>
 <section class="set">
     <div class="set-title">Популярные наборы</div>
-    <div class="set-card-list">
-        <app-set-card></app-set-card>
-        <app-set-card></app-set-card>
-        <app-set-card></app-set-card>
-        <app-set-card></app-set-card>
-        <app-set-card></app-set-card>
-        <app-set-card></app-set-card>
+    <div class="set-card-list" *ngIf="products">
+        <div *ngFor="let item of products; let i=index">
+            <app-set-card [product]= "item" ></app-set-card>
+        </div>
     </div>
 
     <button type="button" class="button-set" (click)="goToSetsPage()">Все праздничные наборы</button>

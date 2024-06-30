@@ -14,9 +14,10 @@
         <img src="../../../assets/img/ico/phone.png" alt="bag">
         <div>8 800 123 45 67</div>
     </div>
-    <div class="header-cart-item">
+    <div class="header-cart-item bag">
         <img src="../../../assets/img/ico/bag.png" alt="bag">
-        <div>В корзине 4 товара</div>
+        <div class="count-number">{{ totalCount }}</div>
+        <div><a routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page">В корзине {{ totalCount }} {{ totalCountText }}</a></div>
     </div>
 </div>
 <div class="header-nav d-flex flex-row">

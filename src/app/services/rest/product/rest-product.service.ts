@@ -23,7 +23,7 @@ addProductById(id: string | undefined): Observable<IProduct> {
 
 }
 
-getAllProduct(): Observable<IProduct[]> {
+getAllProduct(): Observable<IProduct[] | []> {
 
   return this.http.get<IProduct[]>('http://localhost:3000/products/');
 

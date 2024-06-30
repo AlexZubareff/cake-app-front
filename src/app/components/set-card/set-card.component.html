@@ -1,14 +1,13 @@
 
 <div class="set-card">
-    <img src="../../../assets/img/set-img/Rectangle 172.png" class="img-set-card" alt="">
+    <img src="http://localhost:3000/public/img/set-img/{{product.img}}" class="img-set-card" alt="">
     <div class="set-card-content">
-        <div class="set-card-content-title">Сердце</div>
-        <div class="set-card-content-text">24 штуки в коробке в виде сердца. Ассорти из 6 вкусов</div></div>
+        <div class="set-card-content-title">{{product.title}}</div>
+        <div class="set-card-content-text">{{product.description}}</div></div>
         <div class="card-footer">
-            <div class="set-card-content-price">2800 руб</div>
+            <div class="set-card-content-price">{{product.price}} руб.</div>
             <div class="">
-                <button  type="button" class="set-card-content-cart-button"  ><img src="../../../assets/img/ico/bag.png" alt="bag">В корзину</button>
+                <button  type="button" class="set-card-content-cart-button" (click)="addToCart(product)"><img src="http://localhost:3000/public/img/ico/bag.png" alt="bag">В корзину</button>
         </div>
     </div>
 </div>
-

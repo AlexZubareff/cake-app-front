@@ -1,0 +1,47 @@
+<section class="cart">
+    <div class="cart-title">Ваша корзина</div>
+    <div class="cart-count">{{ totalCount }} {{ totalCountText }} / {{ totalCoast }} руб.</div>
+    <div class="cart-info">
+        <div class="cart-list" *ngIf="cart">
+            <div *ngFor="let product of cart; let i=index">
+
+                <app-cart-item [product]= "product"></app-cart-item>
+            </div>
+        </div>
+        <div class="cart-total">
+            <div class="cart-total-title">Итого</div>
+            <div class="cart-total-content">
+                <div class="cart-total-price">
+                    <div class="cart-total-price-text">Стоимость товаров</div>
+                    <div class="cart-total-price-value">{{ totalCoast }} руб</div>
+                </div>
+                <div class="cart-total-discount">
+                    <div class="cart-total-discount-text">Скидка</div>
+                    <div class="cart-total-discount-value">0 руб</div>
+                </div>
+                <div class="cart-total-delivery">
+                    <div class="cart-total-delivery-text">Доставка</div>
+                    <div class="cart-total-delivery-value">0 руб</div>
+                </div>
+                <div class="cart-total-pay">
+                    <div class="cart-total-pay-text">К оплате</div>
+                    <div class="cart-total-pay-value">{{ totalCoast }} руб</div>
+                </div>
+            </div>
+            
+            <div >
+                <button  type="button" class="order-button" (click)="orderSubmit()">Офрмить заказ</button>
+         </div>
+
+        </div>
+
+    </div>
+        
+
+   
+
+
+
+    <!-- <button type="button" class="button-set" (click)="goToSetsPage()">Все праздничные наборы</button> -->
+
+</section>

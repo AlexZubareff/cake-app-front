@@ -1,0 +1,20 @@
+
+<div class="cart-item">
+    <div class="cart-item-close-buttom" (click)="delCartItem(product._id)"><img src="http://localhost:3000/public/img/ico/Close.png" alt=""></div>
+    <img src="http://localhost:3000/public/img/set-img/{{product.img}}" class="img-cart" alt="">
+    <div class="cart-item-info">
+        <div class="cart-item-info-title">{{product.title}}</div>
+        <div class="cart-item-info-text">{{product.description}}</div>
+    </div>    
+        <div class="cart-item-count-panel">
+            <button class="cart-item-minus-count" (click)="delItemCount(product._id)">-</button>
+            
+            <div class="cart-item-count">{{count}}</div>
+
+            <button class="cart-item-plus-count" (click)="addItemCount(product._id)">+</button>
+        </div>
+
+        <div class="set-item-price"><span>Цена</span>{{product.price}} руб.</div>
+
+</div>
+
