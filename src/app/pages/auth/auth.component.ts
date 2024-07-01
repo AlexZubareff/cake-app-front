@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { IUser } from '../../models/users';
+import { RegistrationComponent } from '../registration/registration.component';
 
 @Component({
   selector: 'app-auth',
@@ -20,7 +21,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private restUserService: RestUserService, 
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
   ){}
   ngOnInit(): void {
     
@@ -52,6 +53,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
       this.userService.setUser(data);
       const token: string = data.access_token;
       this.userService.setToken(token);
+      this.closeAuthModal();
 
       this.router.navigate(['']);
 
@@ -66,5 +68,13 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
 
   goToRegSubmit(){
     console.log("goToRegSubmit");
+
+  }
+
+  closeAuthModal(){
+    const element = document.getElementById('authModal');
+    // console.log(element);
+    element?.removeAttribute("aria-modal");
+    element?.removeAttribute("open");
   }
 }

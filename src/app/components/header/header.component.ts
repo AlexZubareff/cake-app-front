@@ -42,13 +42,14 @@ export class HeaderComponent  implements OnInit, OnDestroy, OnChanges{
   console.log('subscribe data getUser: ', data);
   this.user = data;
  })
-
+ this.totalCount = this.cartService.getCartTotalCount();
  this.cartTotalCountUnsubscribe  = this.cartService.newCartTotalCount$.subscribe(
   (data) => {
     console.log('newCartTotalCount: ', data);
     this.totalCount = data;
   }
 );
+this.totalCountText = this.cartService.getCartTotalCountText(this.totalCount);
 this.cartTotalCountTextUnsubscribe  = this.cartService.newCartTotalCountText$.subscribe(
   (data) => {
     console.log('newCartTotalCountText: ', data);

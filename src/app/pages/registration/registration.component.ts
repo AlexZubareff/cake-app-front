@@ -48,5 +48,13 @@ export class RegistrationComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log('auth false');
     })
   }
+
+  closeRegModal(){
+    const element = document.getElementById('registrationModal');
+    // console.log(element);
+    element?.removeAttribute("aria-modal");
+    element?.removeAttribute("open");
+  }
+  
 }
 

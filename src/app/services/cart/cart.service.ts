@@ -32,6 +32,7 @@ export class CartService {
 
       product.count = 1;
       this.productsInCart.push(product);
+      this.getCartTotalCount();
 
       } else {
             let productIndex = this.productsInCart.findIndex(item => item._id === product._id);
@@ -40,10 +41,12 @@ export class CartService {
             if(productIndex !== -1) {
       
               this.productsInCart[productIndex].count!++
+              this.getCartTotalCount();
 
     } else {
       product.count = 1;
       this.productsInCart.push(product);
+      this.getCartTotalCount();
     }
 
 
@@ -151,8 +154,12 @@ delFromCart(id: string){
   this.productsInCart = this.getCartItems();
   // let cart = this.productsInCart.splice(this.productsInCart.findIndex(item => item._id === id), 1);
   let newCart:IProductInCart[] | null = this.productsInCart.filter(item => item._id !== id);
+  this.productsInCart = newCart;
   localStorage.setItem('USER CART', JSON.stringify(newCart));
   this.newProductsInCart.next(newCart);
+  this.getCartTotalCoast();
+  this.getCartTotalCount();
+  
   // console.log('Корзина после удаления: ' ,cart);
 
 }

@@ -10,7 +10,7 @@
 }
 
 .registration-form {
-
+position: relative;
     width: 540px;
     height: 540px;
     display: flex;
@@ -24,6 +24,15 @@
 
     background: rgb(247, 235, 229);
 
+}
+
+.reg-form-close-buttom {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
 }
 
 .registration-field-list {

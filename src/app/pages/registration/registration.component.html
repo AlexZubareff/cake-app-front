@@ -1,5 +1,6 @@
 <div class="registration" >
     <div class="registration-form" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="reg-form-close-buttom" (click)="closeRegModal()"><img src="http://localhost:3000/public/img/ico/Close.png" alt=""></div>
         <div class="registration-field-list">
             <div >
                 <span class="field-title">Логин</span>
