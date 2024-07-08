@@ -1,1 +1,12 @@
-<p>actions works!</p>
+<section class="actions">
+    <div class="actions-title">Акции</div>
+    <div class="actions-card-list" *ngIf="actions">
+        <div *ngFor="let item of actions; let i=index">
+            <app-action-card [action]= "item" ></app-action-card>
+        </div>
+    </div>
+
+    <button type="button" class="button-actions" (click)="showMore()">Все акции</button>
+
+</section>
+

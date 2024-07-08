@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class SetsComponent implements OnInit {
 
   sets: IProduct[] | [];
+  limit: number = 0; 
 
   constructor(
     private router: Router,
@@ -22,12 +23,11 @@ export class SetsComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe((data: IProduct[] | []) => {
+    this.productsService.getProductsByType('set', this.limit).subscribe((data: IProduct[] | [])=>{
       this.sets = data;
       console.log('PRODUCTS FROM SERVER: ', this.sets)
-      
-    }
-  )
+    });
+
   }
 
 

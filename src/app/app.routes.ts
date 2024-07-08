@@ -7,6 +7,8 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CatalogComponent } from './pages/catalog/catalog.component';
+import { MacaronsComponent } from './pages/macarons/macarons.component';
 
 export const routes: Routes = [
     {path: '', component: MainComponent, pathMatch: 'full'},
@@ -16,6 +18,9 @@ export const routes: Routes = [
     {path: 'registration', component: RegistrationComponent},
     {path: 'product', component: ProductComponent},
     {path: 'cart', component: CartComponent},
+    {path: 'catalog', component: CatalogComponent},
+    {path: 'macarons', component: MacaronsComponent},
+
 
 
 

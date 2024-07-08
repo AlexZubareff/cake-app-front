@@ -1,23 +1,28 @@
 .set-card {
-    width: 370px;
-    height: 459px;
+    width: 330px;
+    min-height: 419px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px;
     margin-top: 30px;
     box-sizing: border-box;
     overflow: hidden;
     border: 1px solid rgb(237, 237, 240);
     border-radius: 5px;
-
+    padding-top: 20px;
     background: rgb(255, 255, 255);
 }
 
 .img-set-card {
-    width: 370px;
-    height: 300px;
+   /* width: 370px;
+    height: 300px; */
+
+    width: 180px;
+    height: 146px;
+
+
 }
 
 .set-card-content-title {
@@ -37,9 +42,14 @@
 }
 
 .set-card-content-price {
-    width: 220px;
+    width: 190px;
     height: 49px;
     padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
 
     /* Montserrat semi 18 */
     color: rgb(231, 66, 106);
@@ -50,11 +60,12 @@
     letter-spacing: 0%;
     text-align: left;
     box-sizing: border-box;
-    border: 1px solid rgb(237, 237, 240);
+    border-top: 1px solid rgb(237, 237, 240);
+    border-right: 1px solid rgb(237, 237, 240);
 }
 
 .set-card-content-cart-button {
-    width: 150px;
+    width: 140px;
     height: 49px;
     background: rgb(255, 255, 255);
     /* padding: 10px 20px; */

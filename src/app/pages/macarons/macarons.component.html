@@ -1,0 +1,11 @@
+<section class="mac">
+    <div class="mac-title">Macarons</div>
+    <div class="mac-card-list" *ngIf="productMac">
+        <div *ngFor="let item of productMac; let i=index">
+            <app-set-card [set]= "item" ></app-set-card>
+        </div>
+    </div>
+
+    <button type="button" class="button-mac" (click)="showMore()">Все праздничные наборы</button>
+
+</section>

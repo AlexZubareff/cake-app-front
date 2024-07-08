@@ -2,6 +2,11 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RestUserService } from '../../services/rest/user/rest-user.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { CartService } from '../../services/cart/cart.service';
+import { RestCartService } from '../../services/rest/cart/rest-cart.service';
+import { ICart } from '../../models/cart';
+import { IProductInCart } from '../../models/product';
+import { IUser } from '../../models/users';
 
 @Component({
   selector: 'app-registration',
@@ -12,8 +17,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class RegistrationComponent implements OnInit, AfterViewInit, OnDestroy {
   regForm: FormGroup;
+  newUser: IUser;
+  newUserCart: ICart;
 
-  constructor(private restUserService: RestUserService){}
+  constructor(
+    private restUserService: RestUserService,
+  private restCartsService: RestCartService){}
   ngOnInit(): void {
     
         // init formGroup
@@ -35,18 +44,70 @@ export class RegistrationComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onSubmit(){
 
-    const userData = this.regForm.getRawValue();
-    console.log('registration user data: ', userData)
 
-    this.restUserService.registerUser(userData).subscribe((data)=>{
+    let regData = this.regForm.getRawValue();
+    console.log('registration user data: ', regData)
+    regData.role = 'user';
+    regData.cartId = '';
+
+    // Регистрируем пользователя
+    this.restUserService.registerUser(regData).subscribe((data)=>{
       console.log('registration User Data: ', data);
+      this.newUser = data;
+      console.log('New tUser Data: ', this.newUser);
+
+
+  //Создаем корзину новому пользователю
+
+  this.newUserCart = {
+    userId: this.newUser._id,
+    cart: [],
+
+  } 
+console.log('newUserCart: ', this.newUserCart);
+
+
+this.restCartsService.addCart(this.newUserCart).subscribe((data)=>{
+  console.log('newUserCart: ', data);
+  // this.newUserCart = data;
+  this.newUser.cartId = data._id;
+  console.log('newUser: ', this.newUser);
+
+  // console.log('newUser: ', this.newUser);
+
+
+
+
+
+//   console.log('newUser: ', this.newUser);
+
+// console.log('newUserCart: ', newUserCart);
+
+this.restUserService.updateUser(this.newUser._id!, this.newUser).subscribe((data)=>{
+  console.log('update User Data: ', data.cartId);
+
+  })
+
+})  
+
+
+  window.alert('Пользователь и корзина созданы!');
       
     },(err: HttpErrorResponse) => {
-      const serverError = err.error;
+      const serverError = err.error;                            
       console.log(serverError.errorText)
       // this.messageService.add({severity:'warn', summary:'Service Message', detail:serverError.errorText});
       console.log('auth false');
     })
+
+
+
+
+
+
+    
+
+
   }
 
   closeRegModal(){

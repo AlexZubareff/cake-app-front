@@ -73,7 +73,9 @@ userExit() {
   window.localStorage.removeItem(
     'user-private-token'
     );
-    this.user = null;
+    this.userService.unSetUser();
+    this.cartService.clearCart();
+    console.log('USER после выхода: ', this.user)
 }
 
 showAuthModal(){

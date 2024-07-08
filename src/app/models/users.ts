@@ -4,7 +4,10 @@ export interface IUser {
     email?: string,
     password: string,
     cardNumber?: string,
-    id?: string
+    id?: string,
+    _id?:string,
+    role: string,
+    cartId?:string
 }
 
 export const USER_LOCALSTORAGE_NAME = 'userApp';

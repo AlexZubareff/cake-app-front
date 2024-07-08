@@ -8,7 +8,7 @@ import { RestUserService } from '../rest/user/rest-user.service';
 })
 export class UserService {
 
-  private user: IUser | null;
+  public user: IUser | null;
 
   private token: string;
 
@@ -46,6 +46,15 @@ export class UserService {
       this.userBehSubject.next(this.user)
     }
   }
+
+  unSetUser(){
+    this.user = null;
+    console.log(this.user)
+
+    this.userBehSubject.next(this.user)
+  }
+
+  updateUser(){}
 
   setToken(token: string): void {
     this.token = token;

@@ -10,6 +10,9 @@ import { AuthComponent } from '../auth/auth.component';
 import { IProduct } from '../../models/product';
 import { ProductsService } from '../../services/products/products.service';
 import { CommonModule } from '@angular/common';
+import { CartComponent } from '../cart/cart.component';
+import { IAction } from '../../models/action';
+import { ActionService } from '../../services/action/action.service';
 
 @Component({
   selector: 'app-main',
@@ -33,20 +36,36 @@ import { CommonModule } from '@angular/common';
 
 export class MainComponent implements OnInit{
 
-  products: IProduct[] | [];
+  sets: IProduct[] | [];
+  actions: IAction[] | [];
+  setLimit: number = 6;
+  actionLimit: number = 4;
 
   constructor(
     private router: Router,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private actionService: ActionService
   ){}
   
   ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe((data: IProduct[] | []) => {
-      this.products = data;
-      console.log('PRODUCTS FROM SERVER: ', this.products)
+
+    this.productsService.getProductsByType('set', this.setLimit).subscribe((data: IProduct[] | [])=>{
+      this.sets = data;
+      console.log('SETS FROM SERVER: ', this.sets)
+    });
+
+    this.actionService.getAllActions(this.actionLimit).subscribe((data) =>{
+      this.actions = data;
       
-    }
-  )
+      console.log(this.actions);
+    });
+
+  //   this.productsService.getAllProducts().subscribe((data: IProduct[] | []) => {
+  //     this.products = data;
+  //     console.log('SETS FROM SERVER: ', this.products)
+      
+  //   }
+  // )
   }
 
 

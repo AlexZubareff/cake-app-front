@@ -1,53 +1,74 @@
 <div class="header-content">
+    <div class="left">
+        <div class="left-img">
+            <img src="../../../assets/img/header/Group 211.png" class="img" alt="логотип">
+            <img src="../../../assets/img/header/Слой 4 1.png" class="img-1" alt="логотип">
+            <img src="../../../assets/img/header/Слой 5 1.png" class="img-2" alt="логотип">
+            <img src="../../../assets/img/header/Слой 8 1.png" class="img-3" alt="логотип">
+            <img src="../../../assets/img/header/Слой 2 1.png" class="img-4" alt="логотип">
+            <img src="../../../assets/img/header/Layer 23 1.png" class="img-5" alt="логотип">
+            <img src="../../../assets/img/header/Фон копия 6.png" class="img-6" alt="логотип">
+            <img src="../../../assets/img/header/Фон копия 4 1.png" class="img-7" alt="логотип">
+            <img src="../../../assets/img/header/Фон копия 6 1.png" class="img-8" alt="логотип">
+            <img src="../../../assets/img/header/Фон копия 2 1.png" class="img-9" alt="логотип">
+            <img src="../../../assets/img/header/Фон копия 5 1.png" class="img-10" alt="логотип">
+            <img src="../../../assets/img/header/Фон копия 3 1.png" class="img-11" alt="логотип">
+        </div>
+    </div>
+    <div class="right">
+        <div class="header-content-right-logo"><img src="../../../assets/img/header/Group 212.png" alt="логотип"></div>
+        <div class="header-content-right-title">Настоящая любовь</div>
+        <div class="header-content-right-text">Пирожные макарон и другие десерты  из натуральных ингредиентов, приготовленные с любовью</div>
+    </div>
     
 </div>
 <section class="products">
     <div class="product-item">
-        <div class="product-item-ico"></div>
-        <span class="product-item-title">Title</span>
-        <span class="product-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div class="product-item-ico"><img src="../../../assets/img/ico/Group 11.png" alt="набор"></div>
+        <span class="product-item-title">Готовые наборы</span>
+        <span class="product-item-content">Готовые наборы со скидкой. Вы можете подобрать набор на подходящий случай.</span>
     </div>
     <div class="product-item">
-        <div class="product-item-ico"></div>
-        <span class="product-item-title">Title</span>
-        <span class="product-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div class="product-item-ico"><img src="../../../assets/img/ico/Group.png" alt="набор"></div>
+        <span class="product-item-title">Собрать свой набор</span>
+        <span class="product-item-content">Выбрать количество макарун, и выбрать вкусы</span>
     </div>   
     <div class="product-item">
-        <div class="product-item-ico"></div>
-        <span class="product-item-title">Title</span>
-        <span class="product-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div class="product-item-ico"><img src="../../../assets/img/ico/Group 200.png" alt="набор"></div>
+        <span class="product-item-title">Набор с индивидуальной печатью</span>
+        <span class="product-item-content">Собрать набор макарон с уникальным дизайном. </span>
     </div>
     <div class="product-item">
-        <div class="product-item-ico"></div>
-        <span class="product-item-title">Title</span>
-        <span class="product-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div class="product-item-ico"><img src="../../../assets/img/ico/Vector.png" alt="набор"></div>
+        <span class="product-item-title">Свадебные предложения</span>
+        <span class="product-item-content">Нежные пирожные макаронс с разными вкусами для украшения вашего свадебного торжества</span>
     </div>
     <div class="product-item">
-        <div class="product-item-ico"></div>
-        <span class="product-item-title">Title</span>
-        <span class="product-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div class="product-item-ico"><img src="../../../assets/img/ico/Group 12.png" alt="набор"></div>
+        <span class="product-item-title">Корпоративные подарки</span>
+        <span class="product-item-content">От 85 руб за шт. С уникальным дизайном.  Приятный комплимент для коллег и партнеров</span>
     </div>
     <div class="product-item">
-        <div class="product-item-ico"></div>
-        <span class="product-item-title">Title</span>
-        <span class="product-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div class="product-item-ico"><img src="../../../assets/img/ico/Group 2.png" alt="набор"/></div>
+        <span class="product-item-title">Оптовые поставки</span>
+        <span class="product-item-content">Предложение для кофеен, кафе, отелей и т.д. Посмотрите условия сотрудничества и отзывы.</span>
     </div>
 </section>
 <section class="actions">
     <div class="actions-title">Акции</div>
-    <div class="actions-card-list">
-        <app-action-card ></app-action-card>
-        <app-action-card></app-action-card>
-        <app-action-card></app-action-card>
-        <app-action-card></app-action-card>
+    <div class="actions-card-list" *ngIf="actions">
+        <div *ngFor="let item of actions; let i=index">
+            <app-action-card [action]= "item" ></app-action-card>
+        </div>
+        
     </div>
 
 </section>
 <section class="set">
     <div class="set-title">Популярные наборы</div>
-    <div class="set-card-list" *ngIf="products">
-        <div *ngFor="let item of products; let i=index">
-            <app-set-card [product]= "item" ></app-set-card>
+    <div class="set-card-list" *ngIf="sets">
+        <div *ngFor="let item of sets; let i=index">
+            <app-set-card [set]= "item" ></app-set-card>
         </div>
     </div>
 

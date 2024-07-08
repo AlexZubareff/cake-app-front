@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IAction } from '../../models/action';
 
 @Component({
   selector: 'app-action-card',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './action-card.component.css'
 })
 export class ActionCardComponent {
+  @Input() action: IAction;
 
+
+  constructor(
+    
+) {}
 }

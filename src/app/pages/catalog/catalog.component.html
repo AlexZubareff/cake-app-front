@@ -1,0 +1,33 @@
+<section class="product">
+    <div class="product-title">Каталог</div>
+    <div class="product-search">
+        <input class="product-search-field"
+        #productSearch
+        type="text"
+        placeholder="Поиск товара ..." 
+        [(ngModel)]="productSearchValue"
+        />
+    
+    </div>
+    <div class="tags-list">
+        <div >
+            <button  type="button" class="tags-button" (click)="getTagsProduct('set')">Наборы</button>
+     </div>
+     <div >
+        <button  type="button" class="tags-button" (click)="getTagsProduct('mac')">Макароне</button>
+ </div>
+ <div >
+    <button  type="button" class="tags-button" (click)="getTagsProduct('cake')">Пирожные</button>
+</div>
+    </div>
+    <div class="product-card-list" *ngIf="products">
+        <!-- <div *ngFor="let item of products; let i=index">
+            <app-set-card [set]= "item" ></app-set-card>
+        </div> -->
+
+            <app-set-card *ngFor="let item of products | filterProduct:productSearchValue; let i=index" [set]= "item" ></app-set-card>
+    </div>
+
+    <button type="button" class="button-product" (click)="showMore()">Показать больше</button>
+
+</section>

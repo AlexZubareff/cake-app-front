@@ -3,10 +3,21 @@
     <div class="cart-count">{{ totalCount }} {{ totalCountText }} / {{ totalCoast }} руб.</div>
     <div class="cart-info">
         <div class="cart-list" *ngIf="cart">
-            <div *ngFor="let product of cart; let i=index">
+            @if(cart.length !== 0){
+                <div *ngFor="let product of cart; let i=index">
 
-                <app-cart-item [product]= "product"></app-cart-item>
-            </div>
+                    <app-cart-item [product]= "product"></app-cart-item>
+                </div>
+                <div >
+                    <button  type="button" class="clear-cart-button" (click)="clearCart()">Очистить корзину</button>
+                </div>
+            } @else {
+                <div class="clear-cart-title">
+                    Ваша корзина пуста
+                </div>
+
+            }
+
         </div>
         <div class="cart-total">
             <div class="cart-total-title">Итого</div>

@@ -28,4 +28,12 @@ getUserById(id: string | undefined): Observable<IUser> {
 
 }
 
+
+updateUser( id: string, data: IUser): Observable<IUser> {
+  console.log(id)
+  console.log(data)
+
+  return this.http.put<IUser>('http://localhost:3000/users/' + id, data);
+
+}
 }

@@ -2,7 +2,7 @@
     <div class="set-title">Готовые наборы</div>
     <div class="set-card-list" *ngIf="sets">
         <div *ngFor="let item of sets; let i=index">
-            <app-set-card [product]= "item" ></app-set-card>
+            <app-set-card [set]= "item" ></app-set-card>
         </div>
     </div>
 

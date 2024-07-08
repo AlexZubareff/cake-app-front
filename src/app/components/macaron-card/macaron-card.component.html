@@ -1,0 +1,12 @@
+<div class="macaron-card">
+    <img src="http://localhost:3000/public/img/mac-img/{{mac.img}}" class="img-set-card" alt="">
+    <div class="macaron-card-content">
+        <div class="macaron-card-content-title">{{mac.title}}</div>
+        <div class="macaron-card-content-text">{{mac.description}}</div></div>
+        <div class="card-footer">
+            <div class="macaron-card-content-price">{{mac.price}} руб.</div>
+            <div class="">
+                <button  type="button" class="macaron-card-content-cart-button" (click)="addToCart(mac)"><img src="http://localhost:3000/public/img/ico/bag.png" alt="bag">В корзину</button>
+        </div>
+    </div>
+</div>

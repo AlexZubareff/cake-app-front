@@ -109,6 +109,7 @@ img {
     border: none;
     background-color: rgba(77, 71, 71, 0.39);
     position: fixed;
+    z-index: 2;
 }
 
 .auth-dialog::backdrop {
@@ -129,6 +130,7 @@ img {
     border: none;
     background-color: rgba(77, 71, 71, 0.39);
     position: fixed;
+    z-index: 2;
 }
 
 .registration-dialog::backdrop {

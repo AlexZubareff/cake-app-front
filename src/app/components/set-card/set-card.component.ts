@@ -11,7 +11,7 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class SetCardComponent {
 
-  @Input() product: IProduct;
+  @Input() set: IProduct;
 
 
   constructor(

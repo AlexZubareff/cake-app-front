@@ -1,13 +1,13 @@
 
 <div class="set-card">
-    <img src="http://localhost:3000/public/img/set-img/{{product.img}}" class="img-set-card" alt="">
+    <img src="http://localhost:3000/public/img/set-img/{{set.img}}" class="img-set-card" alt="">
     <div class="set-card-content">
-        <div class="set-card-content-title">{{product.title}}</div>
-        <div class="set-card-content-text">{{product.description}}</div></div>
+        <div class="set-card-content-title">{{set.title}}</div>
+        <div class="set-card-content-text">{{set.description}}</div></div>
         <div class="card-footer">
-            <div class="set-card-content-price">{{product.price}} руб.</div>
+            <div class="set-card-content-price">{{set.price}} руб.</div>
             <div class="">
-                <button  type="button" class="set-card-content-cart-button" (click)="addToCart(product)"><img src="http://localhost:3000/public/img/ico/bag.png" alt="bag">В корзину</button>
+                <button  type="button" class="set-card-content-cart-button" (click)="addToCart(set)"><img src="http://localhost:3000/public/img/ico/bag.png" alt="bag">В корзину</button>
         </div>
     </div>
 </div>

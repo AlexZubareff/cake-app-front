@@ -10,16 +10,20 @@ export class ProductsService {
 
   constructor(private restProductService: RestProductService) { }
 
-  getAllProducts(): Observable<IProduct[] | []> {
-    return this.restProductService.getAllProduct();
+  getAllProducts(limit: number): Observable<IProduct[] | []> {
+    return this.restProductService.getAllProduct(limit);
     }
     
+  getProductsByType(type: string, limit: number): Observable<IProduct[] | []> {
+      return this.restProductService.getProductByType(type, limit);
+      }
+      
     
+        getProductById(id: string | undefined): Observable<IProduct> {
+          return this.restProductService.getProductById(id);
+        }
   }
 
-//   getProductById(id: string | undefined): Observable<IProduct> {
-//     return this.restUserService.getUserById(id);
-//   }
 
 
 //   setUser(user: IUser) {
