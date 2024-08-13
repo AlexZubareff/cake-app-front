@@ -1,0 +1,33 @@
+networks:
+  dev:
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      -"80:80"
+    volumes:
+      -'./nginx.conf:/etc/nginx/nginx.conf'
+    depends_on:
+    - db
+    - frontend
+    - backend
+
+  db:
+    image: mongo
+    ports:
+      -"27017:27017"
+
+  backend:
+    build:
+      context: ./cake-app-backend
+    depends_on:
+    - db  
+    networks:
+    - dev
+
+  frontend:
+    build:
+      context: ./cake-app-front
+    networks:
+      - dev
