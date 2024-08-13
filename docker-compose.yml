@@ -5,9 +5,9 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      -"80:80"
+      - "80:80"
     volumes:
-      -'./nginx.conf:/etc/nginx/nginx.conf'
+      - './nginx.conf:/etc/nginx/nginx.conf'
     depends_on:
     - db
     - frontend
@@ -16,7 +16,7 @@ services:
   db:
     image: mongo
     ports:
-      -"27017:27017"
+      - "27017:27017"
 
   backend:
     build:
