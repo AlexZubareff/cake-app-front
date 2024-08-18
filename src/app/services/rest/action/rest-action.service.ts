@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IAction } from '../../../models/action';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,9 @@ getActionById(id: string | undefined): Observable<IAction> {
 
 getAllActions(limit: number): Observable<IAction[] | []> {
 
-  return this.http.get<IAction[]>('http://localhost:3000/actions/', {params:{limit: limit}}
+  // return this.http.get<IAction[]>('http://localhost:3000/actions/', {params:{limit: limit}}
+  return this.http.get<IAction[]>(`http://${environment.serverUrl}/actions/`, {params:{limit: limit}}
+
 
 )
 
