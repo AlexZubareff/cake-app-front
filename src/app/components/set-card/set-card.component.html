@@ -1,9 +1,30 @@
 
 <div class="set-card">
-    <img src="http://localhost:3000/public/img/set-img/{{set.img}}" class="img-set-card" alt="">
-    <div class="set-card-content">
-        <div class="set-card-content-title">{{set.title}}</div>
-        <div class="set-card-content-text">{{set.description}}</div></div>
+    <!-- <a href="product" class="link">
+        <div class="link-block">
+            <img src="http://localhost:3000/public/img/set-img/{{set.img}}" class="img-set-card" alt="">
+            <div class="set-card-content">
+                <div class="set-card-content-title">{{set.title}}</div>
+                <div class="set-card-content-text">{{set.description}}</div>
+                <div class="set-card-content-text">{{set._id}}</div>
+            </div>
+        </div>
+        
+    </a> -->
+
+
+    <div class="link" (click)="getProduct(set._id!)">
+        <div class="link-block">
+            <img src="http://localhost:3000/public/img/set-img/{{set.img}}" class="img-set-card" alt="">
+            <div class="set-card-content">
+                <div class="set-card-content-title">{{set.title}}</div>
+                <div class="set-card-content-text">{{set.description}}</div>
+                <div class="set-card-content-text">{{set._id}}</div>
+            </div>
+        </div>
+        
+    </div>
+
         <div class="card-footer">
             <div class="set-card-content-price">{{set.price}} руб.</div>
             <div class="">

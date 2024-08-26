@@ -5,6 +5,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ActionsComponent } from './pages/actions/actions.component';
 import { MainComponent } from './pages/main/main.component';
 import { CommonModule } from '@angular/common';
+// import { RestInterceptorsService } from './services/rest/interceptors/rest-interceptors.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthComponent } from './pages/auth/auth.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +20,8 @@ import { CommonModule } from '@angular/common';
     HeaderComponent, 
     FooterComponent, 
     ActionsComponent,
-    MainComponent
+    MainComponent,
+    AuthComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

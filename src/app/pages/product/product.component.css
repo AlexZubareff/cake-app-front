@@ -1,0 +1,187 @@
+.product {
+    width: 1440px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    
+    /* justify-content: flex-start; */
+    
+    padding: 30px 134px;
+
+}
+
+.main {
+    width: 1170px;
+    min-height: 656px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    /* border: 1px solid red; */
+}
+
+.container-photo {
+    width: 570px;
+    height: 535px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:start;
+    /* border: 1px solid green; */
+}
+.big-photo {
+    width: 570px;
+    height: 450px;
+    border: 1px solid black;
+}
+
+.img-product {
+    width: 570px;
+    height: 450px;
+    
+}
+
+.small-photo {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+}
+
+.content {
+    width: 570px;
+    height: 535px;
+    /* border: 1px solid green; */
+}
+
+.content-title {
+    /* Сердце */
+width: 570px;
+height: 37px;
+
+padding: 0 1.5rem;
+
+/* Montserrat Semi 30 */
+color: rgb(41, 41, 41);
+font-family: Montserrat;
+font-size: 30px;
+font-weight: 600;
+line-height: 37px;
+letter-spacing: 0%;
+text-align: left;
+margin-bottom: 2.5rem;
+}
+
+.content-text {
+
+width: 570px;
+height: 156px;
+
+box-sizing: border-box;
+border: 1px solid rgb(237, 237, 240);
+border-radius: 5px;
+
+padding: 1.5rem;
+
+background: rgb(255, 255, 255);
+margin-bottom: 0.75rem;
+}
+
+.content-cart {
+    width: 570px;
+    height: 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+border: 1px solid rgb(237, 237, 240);
+border-radius: 5px;
+
+background: rgb(255, 255, 255);
+    
+}
+
+.content-price {
+
+color: rgb(231, 66, 106);
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 600;
+line-height: 29px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+.addToCart-button {
+
+    width: 178px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 39px 16px 39px;
+    border: none;
+    border-radius: 3px;
+    background: rgb(231, 66, 106);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 15px 0px;
+
+    /* Montserrat semi 12 */
+color: rgb(255, 255, 255);
+
+}
+
+
+.addToCart-button:hover {
+    background-color: rgb(184, 23, 63);
+}
+
+.bag-img {
+    margin-right: 7px;
+}
+
+.services {
+    padding: 1.5rem 0;
+}
+
+.cervices-delivery, .cervices-pickup, .cervices-gift {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.text {
+    padding: 0 1.5rem;
+    color: rgb(41, 41, 41);
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.description {
+
+    width: 1170px;
+    height: 309px;
+
+    box-sizing: border-box;
+border: 1px solid rgb(237, 237, 240);
+border-radius: 5px;
+
+background: rgb(255, 255, 255);
+}
+
+
+

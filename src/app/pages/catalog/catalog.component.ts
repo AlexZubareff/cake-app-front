@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products/products.service';
 import { IProduct } from '../../models/product';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SetCardComponent } from '../../components/set-card/set-card.component';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { FilterProductPipe } from '../../components/pipes/filter-product.pipe';
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [SetCardComponent, CommonModule, FormsModule, FilterProductPipe],
+  imports: [SetCardComponent, CommonModule, FormsModule, FilterProductPipe, RouterOutlet],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
 })

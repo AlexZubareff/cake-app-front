@@ -63,6 +63,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   AuthOnSubmit(){
+    // debugger;
     const userData = this.authForm.getRawValue();
     console.log('auth user data: ', userData)
 
@@ -75,6 +76,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
       this.userService.setUser(data);
       const token: string = data.access_token;
       this.userService.setToken(token);
+      this.userService.setTokenToStore(token);
+
 
       // Получение корзины пользователя
 
@@ -87,7 +90,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
 
       this.closeAuthModal();
 
-      this.router.navigate(['']);
+      this.router.navigate(['cart']);
 
     }
     ,(err: HttpErrorResponse) => {

@@ -12,20 +12,20 @@ export class RestActionService {
 
   addAction(data: IAction):Observable<IAction> {
 
-    return this.http.post<IAction>('http://localhost:3000/actions/', data);
+    return this.http.post<IAction>(`http://${environment.serverUrl}/actions/`, data);
 
 }
 
 
 getActionById(id: string | undefined): Observable<IAction> {
 
-  return this.http.get<IAction>('http://localhost:3000/actions/' + id);
+  return this.http.get<IAction>(`http://${environment.serverUrl}/actions/` + id);
 
 }
 
 getAllActions(limit: number): Observable<IAction[] | []> {
 
-  // return this.http.get<IAction[]>('http://localhost:3000/actions/', {params:{limit: limit}}
+  // return this.http.get<IAction[]>('http://${environment.serverUrl}/actions/', {params:{limit: limit}}
   return this.http.get<IAction[]>(`http://${environment.serverUrl}/actions/`, {params:{limit: limit}}
 
 
@@ -35,7 +35,7 @@ getAllActions(limit: number): Observable<IAction[] | []> {
 
 getActionsByType(type: string, limit: number): Observable<IAction[] | []> {
 
-  return this.http.get<IAction[]>('http://localhost:3000/actions/type', { params: { type: type, limit: limit } });
+  return this.http.get<IAction[]>(`http://${environment.serverUrl}/actions/type`, { params: { type: type, limit: limit } });
 
 }
 

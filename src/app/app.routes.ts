@@ -18,7 +18,16 @@ export const routes: Routes = [
     {path: 'registration', component: RegistrationComponent},
     {path: 'product', component: ProductComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'catalog', component: CatalogComponent},
+    {
+        path: 'catalog',
+        component: CatalogComponent,
+        children:[
+            {
+                path:'product',
+                component: ProductComponent
+            }
+        ]
+    },
     {path: 'macarons', component: MacaronsComponent},
 
 

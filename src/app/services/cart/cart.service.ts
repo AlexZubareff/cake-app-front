@@ -240,8 +240,8 @@ export class CartService {
 
     if (productIndex !== -1) {
       this.productsInCart![productIndex].count!--;
-      if (this.productsInCart![productIndex].count! < 0) {
-        this.productsInCart![productIndex].count! = 0;
+      if (this.productsInCart![productIndex].count! < 1) {
+        this.productsInCart![productIndex].count! = 1;
       }
       localStorage.setItem('USER CART', JSON.stringify(this.productsInCart));
       this.getCartTotalCount();

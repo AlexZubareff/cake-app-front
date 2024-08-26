@@ -58,20 +58,27 @@ export class UserService {
 
   setToken(token: string): void {
     this.token = token;
+    // window.localStorage.setItem(
+    //   'user-private-token',
+    //   token,
+    //   );
+  }
+
+  setTokenToStore(token: string): void {
     window.localStorage.setItem(
       'user-private-token',
       token,
       );
   }
 
-  // getToken(): string | null {
-  //   if(this.token){
-  //     return this.token
-  //   } else {
-  //     const tokenFromLocalStorage = window.localStorage.getItem('token');
-  //     return tokenFromLocalStorage;
-  //   }
+  getToken(): string | null {
+    if(this.token){
+      return this.token
+    } else {
+      const tokenFromStorage = window.localStorage.getItem('token');
+      return tokenFromStorage;
+    }
     
-  // }
+  }
 
 }

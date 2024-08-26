@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { IProduct, IProductInCart } from '../../models/product';
 import { CartService } from '../../services/cart/cart.service';
+import { ProductsService } from '../../services/products/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-set-card',
@@ -15,7 +17,9 @@ export class SetCardComponent {
 
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private productsService: ProductsService,
+    private router: Router
 ) {}
 
 
@@ -26,7 +30,21 @@ addToCart(product: IProductInCart) {
   // );
 }
   
- 
+getProduct(id: string) {
+//  this.productsService.getProductById(id).subscribe(data => {
+
+//    console.log('Product by ID', data)
+//    this.productsService.setCurrentProduct(data);
+   
+//    this.router.navigate([`product`]);
+
+
+//  });
+this.productsService.productID = id;  
+this.productsService.setProductIdToStore(id);
+this.router.navigate([`product`]);
+
+}
 
 
 }

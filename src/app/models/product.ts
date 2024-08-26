@@ -1,6 +1,7 @@
 export interface IProduct {
     title?: string,
     description?: string,
+    fullDescription?: string,
     manufacturer?: string,
     price?: number,
     img?: string,

@@ -1,1 +1,40 @@
-<p>product works!</p>
+<section class="product">
+    <div class="main">
+        <div class="container-photo">
+            <!-- <div class="big-photo"> -->
+                <img src="http://localhost:3000/public/img/product-img/{{product.img!}}" (error)="setDefaultPicture($event)" class="img-product" alt="">
+            <!-- </div> -->
+            <div class="small-photo"></div>
+
+        </div>
+        <div class="content">
+            <div class="content-title">{{product.title}}</div>
+            <div class="content-text">{{product.description}}</div>
+            <div class="content-cart">
+                <div class="content-price">{{product.price}} руб.</div>
+                <button  type="button" class="addToCart-button" (click)="addToCartSubmit(product)"><img src="http://localhost:3000/public/img/ico/bag.svg" alt="bag" class="bag-img">В корзину</button>
+
+            </div>
+
+            <div class="services">
+                <div class="cervices-delivery">
+                    <img src="http://localhost:3000/public/img/ico/delivery.svg" alt="delivery" class="delivery-img">
+                    <div class="text">Доставка от 400 руб. в день заказа с 12 до 17 или с 17 до 21.  Бесплатно при заказе на сумму от 2000 руб
+                    </div>
+                </div>
+                <div class="cervices-pickup">
+                    <img src="http://localhost:3000/public/img/ico/pickup.svg" alt="pickup" class="pickup-img">
+                    <div class="text">Самовывоз бесплатно. Через 3 часа после оплаты заказа</div>
+                </div>
+                <div class="cervices-gift">
+                    <img src="http://localhost:3000/public/img/ico/gift.svg" alt="gift" class="gift-img">
+                    <div class="text">Можем преподнести как анонимный подарок</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+
+    </div>
+</section>
