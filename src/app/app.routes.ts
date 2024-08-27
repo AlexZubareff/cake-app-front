@@ -9,6 +9,8 @@ import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { MacaronsComponent } from './pages/macarons/macarons.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { adminRouteGuard } from './guards/admin-route/admin-route.guard';
 
 export const routes: Routes = [
     {path: '', component: MainComponent, pathMatch: 'full'},
@@ -18,6 +20,11 @@ export const routes: Routes = [
     {path: 'registration', component: RegistrationComponent},
     {path: 'product', component: ProductComponent},
     {path: 'cart', component: CartComponent},
+    {
+        path: 'admin', 
+        component: AdminComponent, 
+        canActivate: [adminRouteGuard]},
+    
     {
         path: 'catalog',
         component: CatalogComponent,
