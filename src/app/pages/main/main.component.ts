@@ -28,6 +28,7 @@ import { ActionService } from '../../services/action/action.service';
     AuthComponent,
     RouterLink,
     RouterLinkActive
+
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
@@ -71,6 +72,6 @@ export class MainComponent implements OnInit{
 
 
   goToSetsPage(){
-    this.router.navigate(['sets']);
+    this.router.navigate(['shop/sets']);
   }
 }

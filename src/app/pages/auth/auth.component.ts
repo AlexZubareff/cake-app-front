@@ -92,7 +92,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
     
           this.closeAuthModal();
     
-          this.router.navigate(['cart']);
+          this.router.navigate(['shop/catalog']);
 
 
         });

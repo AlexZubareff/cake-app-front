@@ -42,7 +42,7 @@ getProduct(id: string) {
 //  });
 this.productsService.productID = id;  
 this.productsService.setProductIdToStore(id);
-this.router.navigate([`product`]);
+this.router.navigate([`shop/product`]);
 
 }
 

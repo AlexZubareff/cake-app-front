@@ -13,29 +13,55 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { adminRouteGuard } from './guards/admin-route/admin-route.guard';
 
 export const routes: Routes = [
-    {path: '', component: MainComponent, pathMatch: 'full'},
-    {path: 'actions', component: ActionsComponent},
-    {path: 'sets', component: SetsComponent},
+    // {path: '', component: MainComponent, pathMatch: 'full'},
+    // {path: 'actions', component: ActionsComponent},
+    // {path: 'sets', component: SetsComponent},
+    // {path: 'auth', component: AuthComponent},
+    // {path: 'registration', component: RegistrationComponent},
+    // {path: 'product', component: ProductComponent},
+    // {path: 'cart', component: CartComponent},
+    // {
+    //     path: 'admin', 
+    //     component: AdminComponent, 
+    //     canActivate: [adminRouteGuard]},
+    
+    // {
+    //     path: 'catalog',
+    //     component: CatalogComponent,
+    //     pathMatch: 'full',
+    //     children:[
+    //         {
+    //             path:'product',
+    //             component: ProductComponent
+    //         }
+    //     ]
+    // },
+    // {path: 'macarons', component: MacaronsComponent},
+
+
+    {path: '', redirectTo: 'shop', pathMatch: 'full' },
+    {path: 'shop', 
+        children:[
+            {path: '', component: MainComponent},
+            {path: 'product', component: ProductComponent},
+            {path: 'actions', component: ActionsComponent},
+            {path: 'sets', component: SetsComponent},
+            {path: 'product', component: ProductComponent},
+            {path: 'cart', component: CartComponent},
+            {path: 'macarons', component: MacaronsComponent},
+            {path: 'catalog', component: CatalogComponent}
+        ]
+    },
     {path: 'auth', component: AuthComponent},
     {path: 'registration', component: RegistrationComponent},
-    {path: 'product', component: ProductComponent},
-    {path: 'cart', component: CartComponent},
+ 
     {
         path: 'admin', 
         component: AdminComponent, 
-        canActivate: [adminRouteGuard]},
-    
-    {
-        path: 'catalog',
-        component: CatalogComponent,
-        children:[
-            {
-                path:'product',
-                component: ProductComponent
-            }
-        ]
+        canActivate: [adminRouteGuard]
     },
-    {path: 'macarons', component: MacaronsComponent},
+    
+    
 
 
 
