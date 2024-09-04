@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { IUser } from '../../models/users';
 import { UserService } from '../../services/user/user.service';
 import { Subscription } from 'rxjs';
@@ -34,6 +34,7 @@ export class HeaderComponent  implements OnInit, OnDestroy, OnChanges{
   constructor(
     private userService: UserService,
     private cartService: CartService,
+    private router: Router,
     private elementRef: ElementRef<HTMLElement>
   ) { }
   
@@ -66,7 +67,7 @@ this.cartTotalCountTextUnsubscribe  = this.cartService.newCartTotalCountText$.su
 
 
  ngOnDestroy(): void {
-   throw new Error('Method not implemented.');
+  this.router.navigate(['admin']);
  }
 
 userExit() {

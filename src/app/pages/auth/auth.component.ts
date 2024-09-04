@@ -72,31 +72,25 @@ export class AuthComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log('auth User Data from server: ', data);
       
       if(data){
-        this.userService.getUserById(data.id).subscribe((user) => {
-
-          console.log(user);
-          this.userService.setUser(user);
-          const token: string = user.access_token;
-          this.userService.setToken(token);
-          this.userService.setTokenToStore(token);
-    
-    
-          // Получение корзины пользователя
-    
-          this.cartService.getUserCart(user.cartId!);
-    
-    
-          // console.log('Корзина пользователя с сервера при авторизации: ', this.userServerCart);
-    
-    
-    
-          this.closeAuthModal();
-    
-          this.router.navigate(['shop/catalog']);
-
-
-        });
-
+  
+        console.log('user.access_token: ',data.access_token);
+        this.userService.setUser(data);
+        this.userService.setToken(data.access_token);
+        this.userService.setTokenToStore(data.access_token);
+  
+  
+        // Получение корзины пользователя
+  
+        this.cartService.getUserCart(data.cartId!);
+  
+  
+        // console.log('Корзина пользователя с сервера при авторизации: ', this.userServerCart);
+  
+  
+  
+        this.closeAuthModal();
+  
+        this.router.navigate(['shop/catalog']);
       }
 
 

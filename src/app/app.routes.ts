@@ -11,6 +11,7 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
 import { MacaronsComponent } from './pages/macarons/macarons.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { adminRouteGuard } from './guards/admin-route/admin-route.guard';
+import { ShopComponent } from './pages/shop/shop.component';
 
 export const routes: Routes = [
     // {path: '', component: MainComponent, pathMatch: 'full'},
@@ -41,8 +42,14 @@ export const routes: Routes = [
 
     {path: '', redirectTo: 'shop', pathMatch: 'full' },
     {path: 'shop', 
+        component: ShopComponent,
+        // redirectTo: 'shop/main', pathMatch: 'full',
         children:[
+            // {path: '', component: ShopComponent},
+
             {path: '', component: MainComponent},
+
+            // {path: '', component: MainComponent},
             {path: 'product', component: ProductComponent},
             {path: 'actions', component: ActionsComponent},
             {path: 'sets', component: SetsComponent},

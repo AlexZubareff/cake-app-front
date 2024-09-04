@@ -129,6 +129,9 @@ export class CartService {
   }
 
   concatAllCarts(cartFromServer: IProductInCart[] | null): IProductInCart[] |null {
+    // debugger;
+    // const cartFromStorage = localStorage.getItem('USER CART');
+
     const cartFromStorage = JSON.parse(localStorage.getItem('USER CART') || '');
     // console.log('Корзина из LocalS: ', cartFromStorage);
     // console.log('Корзина с сервера: ', cartFromServer);

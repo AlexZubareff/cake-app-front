@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 // import { RestInterceptorsService } from './services/rest/interceptors/rest-interceptors.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './pages/auth/auth.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { AuthComponent } from './pages/auth/auth.component';
     FooterComponent, 
     ActionsComponent,
     MainComponent,
-    AuthComponent
+    AuthComponent,
+    AdminComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
