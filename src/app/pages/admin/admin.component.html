@@ -1,8 +1,30 @@
 <app-admin-header></app-admin-header>
 
 <div class="content">
-<div class="content-left-side"></div>
-<div class="content-right-side"></div>
+<div class="content-left-side">
+        <div class="nav-center">
+            <div class="left-menu-item">
+                <a routerLink="products" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../assets/img/admin-panel/catalog.png" alt="admin" class="nav-img">
+                Товары</a>
+            </div>
+            <div class="left-menu-item">
+                <a routerLink="users" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../assets/img/admin-panel/users.png" alt="admin" class="nav-img">
+                Пользователи</a>
+            </div>
+
+            <!-- <div>
+                <p>Angular Button Click Event Example</p>
+                <button (click)="reloadCurrentPage()">Reload Page</button>
+              </div> -->
+
+    </div>
+</div>
+<div class="content-right-side">
+<router-outlet></router-outlet>
+</div>
+
 
 </div>
 

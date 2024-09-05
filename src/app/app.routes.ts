@@ -12,6 +12,8 @@ import { MacaronsComponent } from './pages/macarons/macarons.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { adminRouteGuard } from './guards/admin-route/admin-route.guard';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ProductsComponent } from './pages/admin/products/products.component';
+import { UsersComponent } from './pages/admin/users/users.component';
 
 export const routes: Routes = [
     // {path: '', component: MainComponent, pathMatch: 'full'},
@@ -65,11 +67,17 @@ export const routes: Routes = [
     {
         path: 'admin', 
         component: AdminComponent, 
-        canActivate: [adminRouteGuard]
+        canActivate: [adminRouteGuard],
+        children:[
+
+            {path: '', component: ProductsComponent},
+            {path: 'products', component: ProductsComponent},
+            {path: 'users', component: UsersComponent},
+
+        ]
     },
     
     
-
 
 
 
