@@ -10,15 +10,21 @@ export class RestUserService {
 
   constructor(private http: HttpClient) { }
 
-  registerUser(data: IUser):Observable<IUser> {
+registerUser(data: IUser):Observable<IUser> {
 
     return this.http.post<IUser>('http://localhost:3000/users/', data);
 
 }
 
-  authUser(data: IUser, login: string): Observable<IUser> {
+authUser(data: IUser, login: string): Observable<IUser> {
 
     return this.http.post<IUser>('http://localhost:3000/users/' + login, data);
+
+}
+
+getAllUser(): Observable<IUser[]> {
+
+  return this.http.get<IUser[]>('http://localhost:3000/users/');
 
 }
 

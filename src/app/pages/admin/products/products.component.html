@@ -1,1 +1,14 @@
-<p>products works!</p>
+<div class="user-header">
+    <div class="user-header-left-side">
+        <div class="title-page">{{ titlePage | uppercase }}</div>
+        <div class="path-page">Главная > {{titlePage | titlecase}}</div>
+    </div>
+    <div class="user-header-right-side">
+        <div class="actions" (click)="addProduct()">
+            <img src="../../../../assets/img/admin-panel/add-product.png" class="add-product-ico" alt="add user">
+        </div>
+    </div>
+
+
+
+</div>

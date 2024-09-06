@@ -18,6 +18,14 @@ export class UserService {
 
   constructor(private restUserService: RestUserService) { }
 
+  getAllUser(): Observable<IUser[]> {
+    return this.restUserService.getAllUser();
+  }
+
+  getUserById(id: string | undefined): Observable<IUser> {
+    return this.restUserService.getUserById(id);
+  }
+
   getUser():any {
     if(this.user) {
       this.userBehSubject.subscribe((data) => {
@@ -31,10 +39,6 @@ export class UserService {
     }
     
     
-  }
-
-  getUserById(id: string | undefined): Observable<IUser> {
-    return this.restUserService.getUserById(id);
   }
 
 

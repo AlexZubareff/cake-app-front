@@ -1,1 +1,15 @@
-<p>users works!</p>
+<div class="user-header">
+    <div class="user-header-left-side">
+        <div class="title-page">{{ titlePage | uppercase }}</div>
+        <div class="path-page">Главная > {{titlePage | titlecase}}</div>
+    </div>
+    <div class="user-header-right-side">
+        <div class="actions" (click)="addUser()">
+            <img src="../../../../assets/img/admin-panel/add-user.png" class="add-user-ico" alt="add user">
+        </div>
+    </div>
+</div>
+<div class="users-content">
+
+    <app-user-list-item></app-user-list-item>
+</div>
