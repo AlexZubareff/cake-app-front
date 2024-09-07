@@ -1,14 +1,23 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { IProduct } from '../../../models/product';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ProductsService } from '../../../services/products/products.service';
 import { CommonModule } from '@angular/common';
+import { ProductListItemComponent } from '../../../components/admin-components/product-list-item/product-list-item.component';
+import { AddProductComponent } from '../add-product/add-product.component';
+import { EditProductComponent } from '../edit-product/edit-product.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    ProductListItemComponent,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    AddProductComponent,
+    EditProductComponent
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
@@ -29,11 +38,11 @@ export class ProductsComponent implements OnInit, OnDestroy, OnChanges{
       'current-url',
       this.router.url,)
 
-      this.productService.getAllProducts(this.limit).subscribe((data)=>{
-        this.products = data;
+      // this.productService.getAllProducts(this.limit).subscribe((data)=>{
+      //   this.products = data;
         
-        console.log(this.products);
-      });
+      //   console.log(this.products);
+      // });
     
   }
   ngOnDestroy(): void {

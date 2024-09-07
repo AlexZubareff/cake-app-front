@@ -1,25 +1,26 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { IUser } from '../../../models/users';
+import { IProduct } from '../../../models/product';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ProductsService } from '../../../services/products/products.service';
 
-import { UserService } from '../../../services/user/user.service';
 
 @Component({
-  selector: 'app-user-list-item',
+  selector: 'app-product-list-item',
   standalone: true,
   imports: [
     RouterLink,
     RouterLinkActive
   ],
-  templateUrl: './user-list-item.component.html',
-  styleUrl: './user-list-item.component.css'
+  templateUrl: './product-list-item.component.html',
+  styleUrl: './product-list-item.component.css'
 })
-export class UserListItemComponent implements OnInit, OnDestroy, OnChanges{
-users: IUser[];
+export class ProductListItemComponent implements OnInit, OnDestroy, OnChanges{
+products: IProduct[];
+limit: number = 10;
 
 constructor(
   private router: Router,
-  private userService: UserService
+  private productService: ProductsService
 ) { }
 
 ngOnInit(): void {
@@ -28,10 +29,10 @@ ngOnInit(): void {
         'current-url',
         this.router.url,)
   
-        this.userService.getAllUser().subscribe((data)=>{
-          this.users = data;
+        this.productService.getAllProducts(this.limit).subscribe((data)=>{
+          this.products = data;
           
-          console.log(this.users);
+          console.log(this.products);
         });
       
     }
@@ -40,4 +41,5 @@ ngOnInit(): void {
     }
     ngOnChanges(changes: SimpleChanges): void {
     }
+
 }

@@ -4,11 +4,17 @@
         <div class="path-page">Главная > {{titlePage | titlecase}}</div>
     </div>
     <div class="user-header-right-side">
-        <div class="actions" (click)="addProduct()">
-            <img src="../../../../assets/img/admin-panel/add-product.png" class="add-product-ico" alt="add user">
+        <div class="actions">
+            <div class="add-product-ico"><a routerLink="create" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../../assets/img/admin-panel/add-product.png" class="add-product-ico" alt="add product"></a>
+            </div>
+            <!-- <img src="../../../../assets/img/admin-panel/add-product.png" class="add-product-ico" alt="add user"> -->
         </div>
     </div>
 
 
 
+</div>
+<div class="products-content">
+    <router-outlet></router-outlet>
 </div>

@@ -44,4 +44,6 @@ align-items: center;
     max-height: 2rem;
 }
 
-
+.products-content {
+    padding: 4rem;
+}

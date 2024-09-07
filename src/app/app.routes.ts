@@ -14,6 +14,12 @@ import { adminRouteGuard } from './guards/admin-route/admin-route.guard';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ProductsComponent } from './pages/admin/products/products.component';
 import { UsersComponent } from './pages/admin/users/users.component';
+import { AddUserComponent } from './pages/admin/add-user/add-user.component';
+import { EditUserComponent } from './pages/admin/edit-user/edit-user.component';
+import { UserListItemComponent } from './components/admin-components/user-list-item/user-list-item.component';
+import { ProductListItemComponent } from './components/admin-components/product-list-item/product-list-item.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
 
 export const routes: Routes = [
     // {path: '', component: MainComponent, pathMatch: 'full'},
@@ -70,9 +76,25 @@ export const routes: Routes = [
         canActivate: [adminRouteGuard],
         children:[
 
-            {path: '', component: ProductsComponent},
-            {path: 'products', component: ProductsComponent},
-            {path: 'users', component: UsersComponent},
+            {path: '', 
+                redirectTo: 'products', pathMatch: 'full',
+                },
+            {path: 'products', 
+                component: ProductsComponent,
+                children:[
+                    {path: '', component: ProductListItemComponent},
+                    {path: 'create', component: AddProductComponent},
+                    {path: 'edit', component: EditProductComponent},
+                ]
+            },
+            {path: 'users', 
+                component: UsersComponent,
+                children:[
+                    {path: '', component: UserListItemComponent},
+                    {path: 'create', component: AddUserComponent},
+                    {path: 'edit', component: EditUserComponent},
+                ]
+            },
 
         ]
     },

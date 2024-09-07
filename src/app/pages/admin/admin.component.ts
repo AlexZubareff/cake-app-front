@@ -17,6 +17,7 @@ import { ProductsComponent } from './products/products.component';
 import { UsersComponent } from './users/users.component';
 import { UserService } from '../../services/user/user.service';
 import { IUser } from '../../models/users';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @Component({
   selector: 'app-admin',
@@ -29,6 +30,7 @@ import { IUser } from '../../models/users';
     AdminFooterComponent,
     ProductsComponent,
     UsersComponent,
+    AddUserComponent
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
