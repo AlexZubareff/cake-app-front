@@ -45,13 +45,13 @@
                 <div class="admin-ico"><a routerLink="/admin" routerLinkActive="active"
                     ariaCurrentWhenActive="page"><img src="http://localhost:3000/public/img/ico/admin-user.png" alt="admin" class="admin-img"></a>
                 </div>
-                <div class="menu-item"><a routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">{{ user.login | titlecase }}</a></div>
+                <div class="menu-item"><a routerLink="profile" routerLinkActive="active" ariaCurrentWhenActive="page">{{ user.login | titlecase }}</a></div>
                 <div class="menu-item"><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="userExit()">Выход</a>
                 </div>
             </div>
         } @else { 
             <div class="nav-right">
-                <div class="menu-item"><a routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">{{ user.login | titlecase }}</a></div>
+                <div class="menu-item"><a routerLink="profile" routerLinkActive="active" ariaCurrentWhenActive="page">{{ user.login | titlecase }}</a></div>
                 <div class="menu-item"><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="userExit()">Выход</a>
                 </div>
             </div>

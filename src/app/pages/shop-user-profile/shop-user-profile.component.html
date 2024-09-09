@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="left-side">
+       
+            <img src="../../../assets/img/ico/user-photo.png" class="user-photo" alt="user-photo">
+        <div class="user-content"></div>
+    </div>
+    <div class="right-side">
+        <div class="right-side-nav">
+            <button  type="button" class="profile-button" (click)="getUserProfile()">Профиль</button>
+            <button  type="button" class="profile-button" (click)="getUserOrders()">Заказы</button>
+
+        </div>
+        <div class="right-side-content">
+             <router-outlet></router-outlet>   
+        </div>
+    </div>
+</div>

@@ -20,6 +20,10 @@ import { UserListItemComponent } from './components/admin-components/user-list-i
 import { ProductListItemComponent } from './components/admin-components/product-list-item/product-list-item.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
+import { ShopUserProfileComponent } from './pages/shop-user-profile/shop-user-profile.component';
+import { AdminUserProfileComponent } from './pages/admin/admin-user-profile/admin-user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 
 export const routes: Routes = [
     // {path: '', component: MainComponent, pathMatch: 'full'},
@@ -64,7 +68,14 @@ export const routes: Routes = [
             {path: 'product', component: ProductComponent},
             {path: 'cart', component: CartComponent},
             {path: 'macarons', component: MacaronsComponent},
-            {path: 'catalog', component: CatalogComponent}
+            {path: 'catalog', component: CatalogComponent},
+            {path: 'profile', 
+                component: ShopUserProfileComponent,
+                children:[
+                    {path: '', component: UserProfileComponent},
+                    {path: 'user-orders', component: UserOrdersComponent},
+                ]
+            }
         ]
     },
     {path: 'auth', component: AuthComponent},
@@ -93,6 +104,7 @@ export const routes: Routes = [
                     {path: '', component: UserListItemComponent},
                     {path: 'create', component: AddUserComponent},
                     {path: 'edit', component: EditUserComponent},
+                    {path: 'profile', component: AdminUserProfileComponent}
                 ]
             },
 
