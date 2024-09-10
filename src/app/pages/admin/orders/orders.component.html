@@ -1,0 +1,20 @@
+<div class="user-header">
+    <div class="user-header-left-side">
+        <div class="title-page">{{ titlePage | uppercase }}</div>
+        <div class="path-page">Главная > {{titlePage | titlecase}}</div>
+    </div>
+    <div class="user-header-right-side">
+        <div class="actions">
+
+        <div class="add-user-ico"><a routerLink="create" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <img src="../../../../assets/img/admin-panel/add-user.png" class="add-user-ico" alt="add user"></a>
+        </div>
+        <!-- <div class="actions" (click)="addUser()">
+            <img src="../../../../assets/img/admin-panel/add-user.png" class="add-user-ico" alt="add user"> -->
+        </div>
+    </div>
+</div>
+<div class="users-content">
+    <router-outlet></router-outlet>
+    <!-- <app-user-list-item [users]="users"></app-user-list-item> -->
+</div>

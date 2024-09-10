@@ -7,7 +7,10 @@ export interface IUser {
     id?: string,
     _id?:string,
     role: string,
-    cartId?:string
+    cartId?:string,
+    createdAt?:string,
+    updatedAt?:string,
+
 }
 
 export const USER_LOCALSTORAGE_NAME = 'userApp';

@@ -24,6 +24,7 @@ import { ShopUserProfileComponent } from './pages/shop-user-profile/shop-user-pr
 import { AdminUserProfileComponent } from './pages/admin/admin-user-profile/admin-user-profile.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
+import { OrdersComponent } from './pages/admin/orders/orders.component';
 
 export const routes: Routes = [
     // {path: '', component: MainComponent, pathMatch: 'full'},
@@ -81,8 +82,7 @@ export const routes: Routes = [
     {path: 'auth', component: AuthComponent},
     {path: 'registration', component: RegistrationComponent},
  
-    {
-        path: 'admin', 
+    {path: 'admin', 
         component: AdminComponent, 
         canActivate: [adminRouteGuard],
         children:[
@@ -107,7 +107,15 @@ export const routes: Routes = [
                     {path: 'profile', component: AdminUserProfileComponent}
                 ]
             },
-
+            {path: 'orders', 
+                component: OrdersComponent,
+                // children:[
+                //     {path: '', component: UserListItemComponent},
+                //     {path: 'create', component: AddUserComponent},
+                //     {path: 'edit', component: EditUserComponent},
+                //     {path: 'profile', component: AdminUserProfileComponent}
+                // ]
+            },
         ]
     },
     
