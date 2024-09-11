@@ -13,4 +13,12 @@ export class OrdersService {
   getAllOrders(): Observable<IOrder[]> {
     return this.restOrderService.getAllOrders();
   }
+
+  addOrder(data: IOrder): Observable<IOrder> {
+    return this.restOrderService.addOrder(data);
+  }
+
+  // addOrder(data: IOrder): void {
+  //  this.restOrderService.addOrder(data);
+  // }
 }

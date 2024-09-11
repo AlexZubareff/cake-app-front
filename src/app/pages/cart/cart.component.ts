@@ -8,6 +8,9 @@ import { RestCartService } from '../../services/rest/cart/rest-cart.service';
 import { UserService } from '../../services/user/user.service';
 import { ICart } from '../../models/cart';
 import { IUser } from '../../models/users';
+import { IOrder } from '../../models/order';
+import { OrdersService } from '../../services/orders/orders.service';
+import { RestOrderService } from '../../services/rest/order/rest-order.service';
 
 @Component({
   selector: 'app-cart',
@@ -39,7 +42,9 @@ export class CartComponent implements OnInit, OnChanges {
   constructor(
     private cartService: CartService,
     private restCartService: RestCartService,
-    private userService: UserService
+    private userService: UserService,
+    private ordersService: OrdersService,
+    private resrOrderService: RestOrderService
   ) {}
 
   ngOnInit(): void {
@@ -94,7 +99,10 @@ export class CartComponent implements OnInit, OnChanges {
 
     
     console.log('orderSubmit Cart: ', this.cartService.getCartItems());
+
+
     let currentCart = this.cartService.getCartItems();
+
     if(Array.isArray(currentCart)){
       if(currentCart.length === 0) {
         window.alert('Ваша корзина пуста.');
@@ -102,21 +110,28 @@ export class CartComponent implements OnInit, OnChanges {
       
         console.log('UserCart ID: ', this.user.cartId)
 
-        // let newUserCart: ICart = {
-        //   cart: currentCart,
-        //   userId: this.user.id,
-        // }     
+        
 
         let newUserCart: IProductInCart[] = currentCart;
  
+        let order: IOrder = {
+          userId: this.user.id,
+          order: currentCart
+        }
+
+        console.log('Заказ : ', order)
 
         console.log('newUserCart User: ', newUserCart)
          
-
-        this.restCartService.updateUserCart(this.user.cartId!, newUserCart).subscribe((data)=>{
-          console.log('cart User Data: ', data);
-          window.alert('Заказ оформлен!');
+        // Сохраняем заказ в БД
+        this.resrOrderService.addOrder(order).subscribe((data) => {
+          console.log('Order User Data: ', data);
         })
+
+        // this.restCartService.updateUserCart(this.user.cartId!, newUserCart).subscribe((data)=>{
+        //   console.log('cart User Data: ', data);
+        //   window.alert('Заказ оформлен!');
+        // })
 
         // let currentUser = this.userService.getUser();
         console.log('current User: ', this.user)

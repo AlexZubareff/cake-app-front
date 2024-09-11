@@ -111,6 +111,8 @@ margin: 6px 0px; */
     margin: 15px 0px;
 }
 
-.registration-button:hover {
-    background-color: rgb(184, 23, 63);
+.registration-button:active {
+    position: relative;
+    top: 1px;
 }
+

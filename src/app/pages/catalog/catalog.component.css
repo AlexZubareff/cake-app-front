@@ -75,17 +75,27 @@ text-align: center;
     padding: 16px 39px 16px 39px;
     border: none;
     border-radius: 20px;
-    background: rgb(255, 107, 144);
+    background: rgb(231, 66, 106);
+
+    /* background: rgb(255, 107, 144); */
     flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 0;
     margin: 15px 0px;
     color: aliceblue;
+
+    transition: opacity 0.2s ease-in;
 }
 
 .tags-button:hover {
-    background-color: rgb(250, 59, 107);
+    opacity: 0.8;
+    /* background-color: rgb(250, 59, 107); */
+}
+
+.tags-button:active {
+    position: relative;
+    top: 1px;
 }
 
 .product-card-list {

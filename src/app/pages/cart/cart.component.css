@@ -136,11 +136,17 @@ background: rgb(255, 255, 255);
     align-self: stretch;
     flex-grow: 0;
     margin: 15px 0px;
+    transition: opacity 0.2s ease-in;
 }
 
 
 .order-button:hover {
-    background-color: rgb(184, 23, 63);
+    opacity: 0.8;
+}
+
+.order-button:active {
+    position: relative;
+    top: 1px;
 }
 
 .cart-total-price, .cart-total-discount, .cart-total-delivery, .cart-total-pay {

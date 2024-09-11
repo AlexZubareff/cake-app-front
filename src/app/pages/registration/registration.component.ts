@@ -7,6 +7,7 @@ import { RestCartService } from '../../services/rest/cart/rest-cart.service';
 import { ICart } from '../../models/cart';
 import { IProductInCart } from '../../models/product';
 import { IUser } from '../../models/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -22,7 +23,9 @@ export class RegistrationComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private restUserService: RestUserService,
-  private restCartsService: RestCartService){}
+    private restCartsService: RestCartService,
+    private router: Router
+  ){}
   ngOnInit(): void {
     
         // init formGroup
@@ -90,8 +93,11 @@ this.restUserService.updateUser(this.newUser._id!, this.newUser).subscribe((data
 
 })  
 
+this.closeRegModal();
 
-  window.alert('Пользователь и корзина созданы!');
+this.showAuthModal();
+
+  // window.alert('Пользователь и корзина созданы!');
       
     },(err: HttpErrorResponse) => {
       const serverError = err.error;                            
@@ -108,6 +114,14 @@ this.restUserService.updateUser(this.newUser._id!, this.newUser).subscribe((data
     
 
 
+  }
+
+  showAuthModal(){
+    const element = document.getElementById('authModal');
+    // console.log(element);
+    element?.setAttribute("aria-modal","true");
+    element?.setAttribute("open","open");
+    
   }
 
   closeRegModal(){

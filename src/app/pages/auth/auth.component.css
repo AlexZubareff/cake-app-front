@@ -83,8 +83,11 @@
     margin: 15px 0px;
 }
 
-.auth-button:hover {
-    background-color: rgb(184, 23, 63);
+
+
+.auth-button:active {
+    position: relative;
+    top: 1px;
 }
 
 .reg-button {
