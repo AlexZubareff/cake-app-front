@@ -44,7 +44,7 @@ export class CartComponent implements OnInit, OnChanges {
     private restCartService: RestCartService,
     private userService: UserService,
     private ordersService: OrdersService,
-    private resrOrderService: RestOrderService
+    private restOrderService: RestOrderService
   ) {}
 
   ngOnInit(): void {
@@ -116,7 +116,9 @@ export class CartComponent implements OnInit, OnChanges {
  
         let order: IOrder = {
           userId: this.user.id,
-          order: currentCart
+          order: currentCart,
+          productCount: this.totalCount,
+          productCoast: this.totalCoast
         }
 
         console.log('Заказ : ', order)
@@ -124,7 +126,8 @@ export class CartComponent implements OnInit, OnChanges {
         console.log('newUserCart User: ', newUserCart)
          
         // Сохраняем заказ в БД
-        this.resrOrderService.addOrder(order).subscribe((data) => {
+        this.restOrderService.addOrder(order).subscribe((data) => {
+          
           console.log('Order User Data: ', data);
         })
 

@@ -1,0 +1,41 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12"> -->
+        <table summary="This table shows how to create responsive tables using Datatables' extended functionality" class="table table-bordered table-hover dt-responsive">
+            <thead>
+                <tr >
+                  <th colspan="5">СПИСОК ЗАКАЗОВ</th>
+                </tr>
+              </thead>
+            <thead>
+              <tr>
+                <th>ID Покупателя</th>
+                <th>Колличество позиций, шт</th>
+                <th>Сумма заказа, руб</th>
+                <th>Дата создания заказа</th>
+                <th>Действие</th>
+              </tr>
+            </thead>
+            <tbody>
+              @if (orders) {
+                @for (item of orders ; track $index) {
+                  <tr (click)="goToOrderEditPage()" class="link">
+                    <td>{{item.userId}}</td>
+                    <td>{{item.productCount}}</td>
+                    <td>{{item.productCoast}}</td>
+                    <td>{{item.createdAt?.substring(0,10)}} {{item.createdAt?.substring(11,19)}}</td>
+                    <td><a routerLink="edit" routerLinkActive="active" ariaCurrentWhenActive="page">
+                      <img src="../../../../assets/img/admin-panel/edit.png" class="edit-ico" alt="edit order"></a>
+                  </td>
+                  </tr>
+                }
+            }
+            </tbody>
+            <tfoot>
+             
+            </tfoot>
+          </table>
+        <!-- </div>
+      </div>
+    </div> -->
+    

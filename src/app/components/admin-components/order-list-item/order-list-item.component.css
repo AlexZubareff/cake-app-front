@@ -3,7 +3,6 @@
     height: 2rem;
 }
 
-
 .link:hover {
-    cursor: pointer;
-    }
+cursor: pointer;
+}

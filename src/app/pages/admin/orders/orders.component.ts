@@ -3,11 +3,15 @@ import { Router, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/rou
 import { CommonModule } from '@angular/common';
 import { OrdersService } from '../../../services/orders/orders.service';
 import { IOrder } from '../../../models/order';
+import { OrderListItemComponent } from '../../../components/admin-components/order-list-item/order-list-item.component';
+import { EditOrderComponent } from '../edit-order/edit-order.component';
 
 @Component({
   selector: 'app-orders',
   standalone: true,
   imports: [
+    EditOrderComponent,
+    OrderListItemComponent,
     CommonModule,
     RouterOutlet,
     RouterLink,
@@ -29,6 +33,8 @@ export class OrdersComponent implements OnInit {
     this.ordersService.getAllOrders().subscribe((data)=>{
       this.orders = data;
       
+      console.log(data);
+
       console.log(this.orders);
     });
   }

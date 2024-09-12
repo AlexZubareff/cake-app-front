@@ -21,11 +21,11 @@
         <tbody>
           @if (users) {
             @for (item of users ; track $index) {
-              <tr>
+              <tr (click)="goToUserEditPage()" class="link">
                 <td>{{item.login}}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.role}}</td>
-                <td>{{item.createdAt}}</td>
+                <td>{{item.createdAt?.substring(0,10)}} {{item.createdAt?.substring(11,19)}}</td>
                 <td><a routerLink="edit" routerLinkActive="active" ariaCurrentWhenActive="page">
                   <img src="../../../../assets/img/admin-panel/edit.png" class="edit-ico" alt="add user"></a>
               </td>

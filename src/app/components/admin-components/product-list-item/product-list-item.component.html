@@ -22,7 +22,7 @@
             <tbody>
               @if (products) {
                 @for (item of products ; track $index) {
-                  <tr>
+                  <tr (click)="goToProductEditPage()" class="link">
                     <td>{{item.title}}</td>
                     <td>{{item.description}}</td>
                     <td>{{item.manufacturer}}</td>

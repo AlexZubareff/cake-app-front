@@ -42,4 +42,7 @@ ngOnInit(): void {
     ngOnChanges(changes: SimpleChanges): void {
     }
 
+    goToProductEditPage(){
+      this.router.navigate(['admin/products/edit'])
+    }
 }

@@ -25,6 +25,8 @@ import { AdminUserProfileComponent } from './pages/admin/admin-user-profile/admi
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { OrdersComponent } from './pages/admin/orders/orders.component';
+import { OrderListItemComponent } from './components/admin-components/order-list-item/order-list-item.component';
+import { EditOrderComponent } from './pages/admin/edit-order/edit-order.component';
 
 export const routes: Routes = [
     // {path: '', component: MainComponent, pathMatch: 'full'},
@@ -109,12 +111,12 @@ export const routes: Routes = [
             },
             {path: 'orders', 
                 component: OrdersComponent,
-                // children:[
-                //     {path: '', component: UserListItemComponent},
+                children:[
+                    {path: '', component: OrderListItemComponent},
                 //     {path: 'create', component: AddUserComponent},
-                //     {path: 'edit', component: EditUserComponent},
+                    {path: 'edit', component: EditOrderComponent},
                 //     {path: 'profile', component: AdminUserProfileComponent}
-                // ]
+                ]
             },
         ]
     },

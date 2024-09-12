@@ -40,4 +40,8 @@ ngOnInit(): void {
     }
     ngOnChanges(changes: SimpleChanges): void {
     }
+
+    goToUserEditPage(){
+      this.router.navigate(['admin/users/edit'])
+    }
 }
